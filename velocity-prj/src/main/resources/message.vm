@@ -1,0 +1,9 @@
+Usando o Velocity.
+
+Podemos gerar a saida em diversos formatos, aqui estamos usando texto, mas por exemplo, poderiamos 
+gerar a saida em HTML.
+
+Abaixo a mensagem que configuramos:
+
+- Mensagem: $msg.Message
+

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<document>
+  <properties>
+    <author>Leandro Fernandes</author>
+    <title>Portal Template</title>
+  </properties>
+  <meta name="keyword" content="Portal Template"/>
+  <meta name="description" content="Portal Template"/>
+  <meta name="reply-to" content="javadev@javadev.com.br" />
+
+  <body>
+    <section name="Portal Template">
+	  <hr/>
+      <p>
+        Paragrafo 1
+      </p>
+ 
+	  <br/>
+	  
+	  <center><label for='name'><b>Portal</b></label></center>
+	  
+	  <br/>
+	  
+	  <div class="row-fluid">
+		<div class="span4">
+		  <p>
+		    Bloco de Texto 01
+		  </p>
+		</div>
+        <div class="span4">
+		  <p>
+		    Bloco de Texto 02
+		  </p>
+		</div>
+		<div class="span4">
+		  <p>
+		    Bloco de Texto 03
+		  </p>
+		</div>
+      </div>
+	  
+	  <br/>
+	  
+	  <div class="row-fluid">
+		<div class="span4">
+		  <p>
+		    Bloco de Texto 04
+		  </p>
+		</div>
+        <div class="span4">
+          <p>
+		    Bloco de Texto 05
+		  </p>
+		</div>
+		<div class="span4">
+          <p>
+		    Bloco de Texto 01
+		  </p>
+		</div>
+      </div>
+	  
+	  <br/>
+	  <br/>
+ 
+      <p><b>Equipe template.com.br</b></p>
+    </section>
+  </body>	
+</document>

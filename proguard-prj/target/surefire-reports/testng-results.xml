@@ -1,0 +1,14 @@
+<testng-results>
+  <reporter-output>
+  </reporter-output>
+  <suite name="Command line suite">
+    <groups>
+    </groups>
+    <test name="Command line test">
+      <class name="br.com.leaf.AppTest">
+        <test-method status="PASS" signature="testApp()" name="testApp" duration-ms="4" started-at="2015-09-04T22:01:23Z" finished-at="2015-09-04T22:01:23Z">
+        </test-method>
+      </class>
+    </test>
+  </suite>
+</testng-results>

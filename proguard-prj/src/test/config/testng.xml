@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="MySuite" verbose="1">
+  <test name="OurTests">
+    <groups>
+      <run>
+        <include name="unit"/>
+      </run>
+    </groups> 
+    <packages>
+      <package name="br.com.leaf.tmp.persistence"/>
+    </packages>
+  </test>
+</suite>

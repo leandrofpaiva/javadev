@@ -1,0 +1,1 @@
+O maven-proguard é um plugin para obfuscação de código, o que ele faz é tornar um pouco mais dificil o entendimento do programa quando o mesmo é descompilado.

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<faqs xmlns="http://maven.apache.org/FML/1.0.1"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/FML/1.0.1 http://maven.apache.org/xsd/fml-1.0.1.xsd"
+  title="Frequently Asked Questions"
+  toplink="false">
+
+  <part id="general">
+    <title>Almost Plain Text</title>
+
+    <faq id="apt">
+      <question>
+        O que é Almost Plain Text?
+      </question>
+      <answer>
+        <p>O APT é uma linguagem simples para construção de páginas colaborativa, baseada no mesmo
+		   esquemas utilizados pelas páginas de wiki.</p>
+      </answer>
+    </faq>
+
+  </part>
+
+  <part id="using">
+    <title>Usando</title>
+
+    <faq id="use">
+      <question>
+        Como faço para escrever páginas de conteúdo colaborativo?
+      </question>
+      <answer>
+        <p>Abaixo seguem os comandos para criação de páginas colaborativas:</p>
+      </answer>
+    </faq>
+
+  </part>
+
+</faqs>

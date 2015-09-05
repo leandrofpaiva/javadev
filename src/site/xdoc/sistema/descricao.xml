@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<document>
+  <properties>
+    <author>Leandro Fernandes</author>
+    <title>Template - Descrição</title>
+  </properties>
+  <meta name="keyword" content="Java, android, cordova, maven, plugin"/>
+  <meta name="description" content="Tutorial que explica como montar um projeto utilizando o plugin do android para maven com o desenolvendo o projeto usando o framework cordova"/>
+  <meta name="reply-to" content="javadev@javadev.com.br" />
+
+  <body>
+    <h1>Descrição do Sistema</h1>
+    
+	<hr/>
+    
+	<section name="1 - Conhecendo o Sistema">
+      <p>
+        Paragrafo 01
+      </p>
+	  
+	  <p>Paragrafo 02</p>
+	  
+	  <pre>Caixa de Texto</pre>
+	</section>
+	
+	<hr/>
+	
+	<section name="2 - Configudando o ambiente de desenvolvimento">
+	  <subsection name="2.1 - Ferramentas">
+        <p>
+          Texto em xml dentro da Tag: <b><![CDATA[<tag1>apk</tag1>]]></b>.
+        </p>
+	    
+		<center><img src="../../images/template.jpg" alt="Template" title="Template" /></center>
+		
+	    <source><![CDATA[
+  Caixa 
+    de
+  Texto 
+  para 
+  Programa]]></source>
+
+	  </subsection>
+	  
+	</section>
+	
+	<hr/>
+	
+	<section name="7 - Referências">
+	  <p><a href="http://template.com.br" target="_blank">http://template.com.br/</a></p>
+	</section>
+	
+	<hr/>
+	
+	<section name="8 - Download">
+	  <p>Para fazer o download clique em: <a href="http://www.template.com.br/downloads/template.rar">Template</a>.</p>
+	</section>
+	
+	<hr/>
+	  
+	<iframe src="http://www.facebook.com/plugins/like.php?href=http://www.javadev.com.br/maven/plugins/proguard.html&amp;layout=standard&amp;show_faces=false&amp;width=450&amp;action=like&amp;colorscheme=light&amp;locale=pt_BR" 
+      scrolling="no" frameborder="0" allowTransparency="true" 
+      style="border:none; overflow:hidden; width:450px; height:30px">
+	</iframe>
+  </body>	
+</document>

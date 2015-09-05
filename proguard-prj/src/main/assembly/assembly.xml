@@ -1,0 +1,47 @@
+<assembly>
+  <id>bin</id>
+  <!-- Generates a zip package containing the needed files -->
+  <formats>
+    <format>zip</format>
+    <!--format>tar</format-->
+    <!--format>tar.gz</format-->
+    <!--format>tar.bz2</format-->
+    <!--format>dir</format-->
+    <!--format>war</format-->
+  </formats>
+
+  <!-- adiciona as lib copiadas pelo maven-dependency-plugin -->
+  <dependencySets>
+    <dependencySet>
+      <useProjectArtifact>false</useProjectArtifact>
+      <outputDirectory>lib</outputDirectory>
+      <unpack>false</unpack>
+    </dependencySet>
+  </dependencySets>
+
+  <fileSets>
+    <fileSet>
+      <!-- Maven Properties -->
+      <!--directory>${project.build.sourceDirectory}</directory-->
+      <!--directory>${project.build.scriptSourceDirectory}</directory-->
+      <!--directory>${project.build.testSourceDirectory}</directory-->
+      <!--directory>${project.build.outputDirectory}</directory-->
+      <!--directory>${project.build.testOutputDirectory}</directory-->
+      <!--directory>${project.build.directory}</directory-->
+      <directory>${project.build.scriptSourceDirectory}</directory>
+      <outputDirectory></outputDirectory>
+      <includes>
+        <include>*.bat</include>
+      </includes>
+    </fileSet>
+	
+    <!-- adds jar package to the root directory of zip package -->
+    <fileSet>
+      <directory>${project.build.directory}</directory>
+      <outputDirectory></outputDirectory>
+      <includes>
+        <include>*.jar</include>
+      </includes>
+    </fileSet>
+  </fileSets>
+</assembly>

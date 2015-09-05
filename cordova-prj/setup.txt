@@ -1,0 +1,35 @@
+1 - Instalando o cordova no repositorio local
+
+mvn install:install-file -DgroupId=org.apache.cordova -DartifactId=cordova -Dversion=2.8.0 -Dfile=cordova-2.8.0.jar -Dpackaging=jar 
+
+2 - Compilando o projeto
+
+mvn install android:apk 
+
+3 - Criando o avd
+
+SDK's tools/ directory and execute android avd. You will see the AVD Manager as 
+
+4 - deploy do aplicativo
+
+mvn android:deploy
+
+5 - Executando
+
+mvn android:run
+
+6 - Instalando e executando direto do celular
+
+mvn clean install android:deploy android:run -Dandroid.device=usb
+
+ou adicionar no pom a configuração do device
+
+<device>usb</device>
+
+
+------------------------------
+
+Links:
+
+http://docs.phonegap.com/en/2.8.0/index.html
+

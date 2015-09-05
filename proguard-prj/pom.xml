@@ -1,0 +1,109 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>br.com.javadev.proguard</groupId>
+  <artifactId>proguard-jar</artifactId>
+  <packaging>jar</packaging>
+  <version>1.0</version>
+  <name>Proguard Projetc Example</name>
+  <url>www.javadev.com.br</url>
+  
+  <parent>
+    <groupId>br.com.javadev</groupId>
+    <artifactId>javadev</artifactId>
+    <version>1.0</version>
+  </parent>
+
+  <properties>
+    <java.bootstrap.classes>${java.home}/lib/rt.jar</java.bootstrap.classes>
+    <java.cryptographic.extension.classes>${java.home}/lib/jce.jar</java.cryptographic.extension.classes>
+    <java.secure.socket.extension.classes>${java.home}/lib/jsse.jar</java.secure.socket.extension.classes>
+  </properties>
+
+  <build>
+    <plugins>
+	  <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jar-plugin</artifactId>
+        <configuration>
+		  <sourceEncoding>${project.build.sourceEncoding}</sourceEncoding>
+          <!-- gerando o manifest para executar o jar na linha de comando -->
+          <archive>
+            <manifest>
+			  <addClasspath>true</addClasspath>
+			  <classpathPrefix>lib/</classpathPrefix>
+              <mainClass>br.com.javadev.proguard.HelloWorld</mainClass>
+              <packageName>br.com.javadev.proguard</packageName>
+            </manifest>
+            <manifestEntries>
+              <mode>development</mode>
+              <url>${project.url}</url>
+            </manifestEntries>
+          </archive>
+        </configuration>
+      </plugin>
+      
+	  <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>exec-maven-plugin</artifactId>
+        <configuration>
+          <mainClass>br.com.javadev.proguard.HelloWorld</mainClass>
+          <!--arguments>
+            <argument>argument1</argument>
+          </arguments-->
+        </configuration>
+      </plugin>
+	  
+	  <plugin>
+        <artifactId>maven-dependency-plugin</artifactId>
+        <executions>
+          <execution>
+            <phase>package</phase>
+            <goals>
+              <goal>copy-dependencies</goal>
+            </goals>
+            <configuration>
+              <outputDirectory>target/lib</outputDirectory>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+
+	  <plugin>
+        <groupId>com.pyx4me</groupId>
+        <artifactId>proguard-maven-plugin</artifactId>
+        <executions>
+          <execution>
+            <phase>package</phase>
+            <goals>
+              <goal>proguard</goal>
+            </goals>
+          </execution>
+        </executions>
+        <configuration>
+		  <outjar>${project.artifactId}-pg-${project.version}.jar</outjar>
+          <options>
+            <!--option>-dontshrink</option>
+            <option>-dontoptimize</option>
+            <option>-allowaccessmodification</option-->
+			<option>-keep public class br.com.javadev.proguard.HelloWorld { public static void main(java.lang.String[]); }</option>
+          </options>
+          <libs>
+            <lib>${env.JAVA_HOME}/jre/lib/rt.jar</lib>
+          </libs>
+        </configuration>
+      </plugin>
+	  
+	  <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-assembly-plugin</artifactId>
+        <configuration>
+          <descriptors>
+		    <!-- especifica o caminho do descritor de configuracao do plugin -->
+            <descriptor>src/main/assembly/assembly.xml</descriptor>
+          </descriptors>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>

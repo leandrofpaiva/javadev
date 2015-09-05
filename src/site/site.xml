@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/DECORATION/1.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/DECORATION/1.0.0 http://maven.apache.org/xsd/decoration-1.0.0.xsd"
+    name="${project.artifactId}">
+
+  <!--bannerLeft>
+    <name>Project Name</name>
+    <src>http://maven.apache.org/images/apache-maven-project-2.png</src>
+    <href>http://maven.apache.org/</href>
+  </bannerLeft>
+
+  <bannerRight>
+    <src>http://maven.apache.org/images/maven-logo-2.gif</src>
+  </bannerRight-->
+
+  <publishDate format="dd MMM yyyy"/>
+  <version position="right"/>
+  <poweredBy>
+    <logo name="Fidelity " href="http://www.mps.com.br/" img="/images/logo.gif"/>
+  </poweredBy>
+
+  <skin>
+    <groupId>org.apache.maven.skins</groupId>
+    <artifactId>maven-fluido-skin</artifactId>
+    <version>1.3.0</version>
+  </skin>
+
+  <body>
+    <!--links>
+      <item name="Java Donwload" href="http://www.oracle.com/technetwork/java/javase/downloads/index.html"/>
+	  <item name="Maven Download" href="http://maven.apache.org/download.cgi"/>
+	  <item name="Eclipse Download" href="http://www.eclipse.org/downloads/"/>
+	  <item name="Jboss Download" href="http://www.jboss.org/jbossas/downloads"/>
+    </links-->
+
+	<!--breadcrumbs>
+      <item name="Doxia" href="http://maven.apache.org/doxia/index.html"/>
+      <item name="Trunk" href="http://maven.apache.org/doxia/doxia/index.html"/>
+    </breadcrumbs-->
+
+	<menu name="Sistema">
+	  <item name="Descrição" href="sistema/descricao.html"/>
+    </menu>
+    
+	<menu name="Faq">
+	  <item name="Colaborando" href="faq-apt.html"/>
+	</menu>
+	
+    <menu name="Informações" ref="reports"/>
+	
+  </body>
+  
+  <custom>
+    <fluidoSkin>
+	  <url>http://www.mps.com.br</url>
+	  <sourceLineNumbersEnabled>true</sourceLineNumbersEnabled> <!-- habilita a exibição do numero da linha para código -->
+	  
+      <topBarEnabled>true</topBarEnabled>
+	  <topBarIcon>
+        <name>Company</name>
+        <alt>Company Docs</alt>
+        <src>/images/logo-mini.gif</src>
+        <href>/index.html</href>
+      </topBarIcon>
+	  
+      <sideBarEnabled>false</sideBarEnabled>
+	  <!--navBarStyle>navbar-inverse</navBarStyle--> <!-- inverte a cor da barra -->
+  
+   </fluidoSkin>
+  </custom>
+</project>

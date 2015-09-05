@@ -1,0 +1,479 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>br.com.javadev</groupId>
+  <artifactId>javadev</artifactId>
+  <packaging>pom</packaging>
+  <name>Javadev Project Examples</name>
+  <version>1.0</version>
+  <url>www.javadev.com.br</url>
+  <description>Projetos Javadev</description>
+  <inceptionYear>2013</inceptionYear>
+  
+  <modules>
+    <module>appassembly-prj</module>
+	<module>aspectj-prj</module>
+	<module>axis-prj</module>
+	<!--module>cordova-prj</module-->
+	<module>dependency-prj</module>
+	<module>exec-prj</module>
+	<module>jar-prj</module>
+	<module>license-prj</module>
+    <module>log-prj</module>
+	<module>modello-prj</module> 
+	<!--module>proguard-prj</module-->
+	<module>scala-prj</module>
+	<module>velocity-prj</module>
+  </modules>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	<maven-checkstyle-plugin.configLocation>${project.basedir}/code-analysis/checkstyle.xml</maven-checkstyle-plugin.configLocation>
+    <maven-pmd-plugin.configLocation>${project.basedir}/code-analysis/pmd.xml</maven-pmd-plugin.configLocation>
+
+	<!-- Plugin versions -->
+	<plugin.assembly.version>2.2.2</plugin.assembly.version>
+	<plugin.appassembler.version>1.4</plugin.appassembler.version>
+	<plugin.axis.version>1.4</plugin.axis.version>
+    <plugin.compiler.version>3.0</plugin.compiler.version>
+	<plugin.dependency.version>2.4</plugin.dependency.version>
+	<plugin.dbdeploy.version>3.0M3</plugin.dbdeploy.version>
+	<plugin.eclipse.version>2.9</plugin.eclipse.version>
+	<plugin.jar.version>2.4</plugin.jar.version>
+	<plugin.exec.version>1.2.1</plugin.exec.version>
+	<plugin.license.version>1.9.0</plugin.license.version>
+	<plugin.modello.version>1.6</plugin.modello.version>
+	<plugin.checkstyle.version>2.8</plugin.checkstyle.version>
+    <plugin.pmd.version>2.7.1</plugin.pmd.version>
+	<plugin.proguard.version>2.0.4</plugin.proguard.version>
+	<plugin.project-info-reports-plugin.version>2.4</plugin.project-info-reports-plugin.version>
+	<plugin.resource.version>2.4.2</plugin.resource.version>
+    <plugin.scm.version>1.8.1</plugin.scm.version>
+	<plugin.surefire.version>2.4.2</plugin.surefire.version>
+	<plugin.scala.version>2.9.1</plugin.scala.version>
+  </properties>
+  
+  <repositories>
+    <repository>
+      <id>download.java.net</id>
+      <name>Java.net Maven Repository</name>
+      <url>http://download.java.net/maven/2</url>
+    </repository>
+	
+	<repository>
+      <id>maven2-repository.dev.java.net</id>
+      <name>Java.net Repository for Maven</name>
+      <url>http://download.java.net/maven/2/</url>
+      <layout>default</layout>
+    </repository> 
+	
+    <repository>
+      <id>sonatype-nexus-snapshots</id>
+      <releases>
+        <enabled>false</enabled>
+      </releases>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+      <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+    </repository>
+	
+	<repository>
+      <id>scala-tools.org</id>
+      <name>Scala-tools Maven2 Repository</name>
+      <url>http://scala-tools.org/repo-releases</url>
+    </repository>
+  </repositories>
+  
+  <pluginRepositories>
+    <pluginRepository>
+      <id>scala-tools.org</id>
+      <name>Scala-tools Maven2 Repository</name>
+      <url>http://scala-tools.org/repo-releases</url>
+    </pluginRepository>
+  </pluginRepositories>
+
+  <!-- Project Information -->
+  <licenses>
+    <license>
+      <name>The Apache Software License, Version 2.0</name>
+      <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+      <distribution>repo</distribution>
+      <comments>A business-friendly OSS license</comments>
+    </license>
+  </licenses>
+
+  <organization>
+    <name>Javadev</name>
+    <url>http://www.javadev.com.br</url>
+  </organization>
+
+  <mailingLists>
+    <mailingList>
+      <name>User List</name>
+      <subscribe>user-subscribe@127.0.0.1</subscribe>
+      <unsubscribe>user-unsubscribe@127.0.0.1</unsubscribe>
+      <post>user@127.0.0.1</post>
+      <archive>http://127.0.0.1/user/</archive>
+      <otherArchives>
+        <otherArchive>http://base.google.com/base/1/127.0.0.1</otherArchive>
+      </otherArchives>
+    </mailingList>
+  </mailingLists>
+
+  <developers>
+    <developer>
+      <id>leandro</id>
+      <name>Leandro Fernandes</name>
+      <email>leandro@javadev.com.br</email>
+      <url>http://www.facebook.com/leandrofpaiva</url>
+      <organization>Upper Sollutions</organization>
+      <organizationUrl>http://www.uppersolutions.com.br/</organizationUrl>
+      <roles>
+        <role>architect</role>
+        <role>developer</role>
+      </roles>
+      <timezone>-3</timezone>
+	  <properties>
+        <gtalk>leandrof.paiva@gmail.com</gtalk>
+		<skype>leandrofpaiva</skype>
+      </properties>
+    </developer>
+  </developers>
+
+  <distributionManagement>
+    <!-- Deploy remoto do componente (Archiva) -->  
+    <repository>
+      <id>javadev.internal</id>
+      <name>Javadev Internal Release Repository</name>
+      <url>http://javadev:8080/repository/javadev.internal/</url>
+	  <layout>default</layout>
+    </repository>
+
+	<!-- publicacao do site do projeto (Apache) -->
+	<!-- mvn site:deploy -->
+	<site>
+      <id>javadev</id>
+      <url>scp://javadev.com.br:2222/home/javad602/public_html</url>
+	  <!--url>file://${env.HOME}/javadev-site</url-->
+    </site>
+  </distributionManagement>
+
+  <!-- Environment Settings -->
+  <scm>
+    <connection>scm:git:https://github.com/leandrofpaiva/maven.git</connection>
+    <developerConnection>scm:git:https://github.com/leandrofpaiva/maven.git</developerConnection>
+    <url>https://github.com/leandrofpaiva/maven.git</url>
+    <tag>HEAD</tag>
+  </scm>
+
+  <issueManagement>
+    <system>Bugzilla</system>
+    <url>http://localhost/bugzilla/</url>
+  </issueManagement>
+
+  <ciManagement>
+    <system>continuum</system>
+    <url>http://localhost:8080/continuum</url>
+    <notifiers>
+      <notifier>
+        <type>mail</type>
+        <sendOnError>true</sendOnError>
+        <sendOnFailure>true</sendOnFailure>
+        <sendOnSuccess>false</sendOnSuccess>
+        <sendOnWarning>false</sendOnWarning>
+        <configuration><address>leandro@javadev.com.br</address></configuration>
+      </notifier>
+    </notifiers>
+  </ciManagement>
+
+  <!-- build configuration -->
+  <build>
+    <finalName>${project.artifactId}-${project.version}</finalName>
+
+	<pluginManagement>
+      <plugins>
+	    <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-assembly-plugin</artifactId>
+          <version>${plugin.assembly.version}</version>
+		</plugin>
+		
+		<plugin>
+		  <groupId>org.codehaus.mojo</groupId>
+          <artifactId>appassembler-maven-plugin</artifactId>
+          <version>${plugin.appassembler.version}</version>
+		</plugin>
+		
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-compiler-plugin</artifactId>
+          <version>${plugin.compiler.version}</version>
+        </plugin>
+		
+		<plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-checkstyle-plugin</artifactId>
+          <version>${plugin.checkstyle.version}</version>
+        </plugin>
+		
+		<plugin>
+          <artifactId>maven-dependency-plugin</artifactId>
+		  <version>${plugin.dependency.version}</version>
+		</plugin>
+
+		<plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-jar-plugin</artifactId>
+          <version>${plugin.jar.version}</version>
+        </plugin>
+		
+		<plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-eclipse-plugin</artifactId>
+          <version>${plugin.eclipse.version}</version>
+        </plugin>
+
+        <plugin>
+          <groupId>org.codehaus.mojo</groupId>
+          <artifactId>exec-maven-plugin</artifactId>
+          <version>${plugin.exec.version}</version>
+        </plugin>
+		
+		<plugin>
+          <groupId>com.mycila.maven-license-plugin</groupId>
+          <artifactId>maven-license-plugin</artifactId>
+          <version>${plugin.license.version}</version>
+		</plugin>
+		
+		<plugin>
+          <groupId>org.codehaus.modello</groupId>
+          <artifactId>modello-maven-plugin</artifactId>
+          <version>${plugin.modello.version}</version>
+		</plugin>
+		
+		<plugin>
+          <groupId>com.pyx4me</groupId>
+          <artifactId>proguard-maven-plugin</artifactId>
+          <version>${plugin.proguard.version}</version>
+		</plugin>
+		
+		<plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-pmd-plugin</artifactId>
+          <version>${plugin.pmd.version}</version>
+        </plugin>
+
+		<plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-project-info-reports-plugin</artifactId>
+          <version>${plugin.project-info-reports-plugin.version}</version>
+        </plugin>
+
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-scm-plugin</artifactId>
+          <version>${plugin.scm.version}</version>
+        </plugin>
+		
+		<plugin>
+          <groupId>org.scala-tools</groupId>
+          <artifactId>maven-scala-plugin</artifactId>
+          <version>${plugin.scala.version}</version>
+         </plugin>
+		
+		<plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-surefire-plugin</artifactId>
+          <version>${plugin.surefire.version}</version>
+        </plugin>
+      </plugins>
+	</pluginManagement>
+
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <source>1.6</source>
+          <target>1.6</target>
+        </configuration>
+      </plugin>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-eclipse-plugin</artifactId>
+        <configuration>
+          <wtpversion>2.0</wtpversion>
+          <downloadJavadocs>true</downloadJavadocs>
+          <downloadSources>true</downloadSources>
+          <m2eclipse>true</m2eclipse>
+          <additionalProjectnatures>
+            <projectnature>org.maven.ide.eclipse.container.Maven2Nature</projectnature>
+          </additionalProjectnatures>
+          <additionalBuildcommands>
+            <buildcommand>org.maven.ide.eclipse.maven2Builder</buildcommand>
+          </additionalBuildcommands>
+          <additionalProjectFacets>
+            <jst.java>1.6</jst.java>
+          </additionalProjectFacets>
+        </configuration>
+      </plugin>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-scm-plugin</artifactId>
+        <configuration>
+          <connectionType>connection</connectionType>
+        </configuration>
+      </plugin>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-checkstyle-plugin</artifactId>
+        <configuration>
+          <skip>${checkstyle.skip}</skip>
+          <configLocation>${maven-checkstyle-plugin.configLocation}</configLocation>
+          <failsOnError>false</failsOnError>
+          <enableRulesSummary>true</enableRulesSummary>
+          <includeTestSourceDirectory>true</includeTestSourceDirectory>
+        </configuration>
+      </plugin>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-pmd-plugin</artifactId>
+        <configuration>
+          <skip>${pmd.skip}</skip>
+          <targetJdk>${maven.compiler.source}</targetJdk>
+          <sourceEncoding>${project.build.sourceEncoding}</sourceEncoding>
+          <!--<minimumTokens>100</minimumTokens>-->
+          <rulesets>
+            <ruleset>${maven-pmd-plugin.configLocation}</ruleset>
+          </rulesets>
+          <failOnViolation>false</failOnViolation>
+        </configuration>
+      </plugin>
+	  
+	  <plugin>
+        <!-- gerando o mapa do site: mvn site -DgenerateSitemap=true -->
+		<artifactId>maven-site-plugin</artifactId>
+        <version>3.2</version>
+		
+        <dependencies>
+          <dependency>
+		    <!-- add support for ssh/scp -->
+            <groupId>org.apache.maven.wagon</groupId>
+            <artifactId>wagon-ssh</artifactId>
+            <version>2.2</version>
+          </dependency>
+		  
+		  <!-- habilitando o processamento de scripts markdown -->
+		  <dependency>
+            <groupId>org.apache.maven.doxia</groupId>
+            <artifactId>doxia-module-markdown</artifactId>
+            <version>1.3</version>
+          </dependency>
+        </dependencies>
+		
+		<configuration>
+          <attach>true</attach>
+          
+		  <reportPlugins>
+		    <!-- Gerando as informacoes do projeto -->
+            <plugin>
+              <groupId>org.apache.maven.plugins</groupId>
+              <artifactId>maven-project-info-reports-plugin</artifactId>
+              <configuration>
+                <dependencyDetailsEnabled>false</dependencyDetailsEnabled>
+                <dependencyLocationsEnabled>false</dependencyLocationsEnabled>
+              </configuration>
+              <!-- simpler configuration without reportSets available for usual cases -->
+              <!-- distribution-management, index, dependencies, help, issue-tracking, plugins, cim,
+              license, dependency-management, mailing-list, project-team, dependency-convergence,
+              scm, plugin-management, modules, summary -->
+              <reports>
+                <report>summary</report>
+                <report>project-team</report>
+                <report>dependencies</report>
+				<report>mailing-list</report>
+                <report>issue-tracking</report>
+                <report>scm</report>
+                <report>modules</report>
+                <report>plugins</report>
+				<report>plugin-management</report>
+				
+				<report>distribution-management</report>
+				
+				<report>help</report>
+				<report>cim</report>
+				<report>license</report>
+				<report>dependency-management</report>
+				<report>dependency-convergence</report>
+				<report>index</report>
+              </reports>
+            </plugin>
+			
+			<plugin>
+              <groupId>org.apache.maven.plugins</groupId>
+              <artifactId>maven-changes-plugin</artifactId>
+              <version>2.9</version>
+			  <reportSets>
+                <reportSet>
+                  <reports>
+                    <report>changes-report</report>
+                  </reports>
+                </reportSet>
+              </reportSets>
+            </plugin>
+			
+			<plugin>
+              <groupId>org.codehaus.mojo</groupId>
+              <artifactId>versions-maven-plugin</artifactId>
+              <reportSets>
+                <reportSet>
+                  <reports>
+                    <report>dependency-updates-report</report>
+                    <report>plugin-updates-report</report>
+                    <report>property-updates-report</report>
+                  </reports>
+                </reportSet>
+              </reportSets>
+            </plugin>
+			
+			<plugin>
+              <groupId>org.apache.maven.plugins</groupId>
+              <artifactId>maven-surefire-plugin</artifactId>
+            </plugin>
+
+          </reportPlugins>
+		</configuration>
+	  </plugin>
+    </plugins>
+  </build>
+
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.6</version>
+      <scope>test</scope>
+    </dependency>
+    
+    <dependency>
+      <groupId>org.testng</groupId>
+      <artifactId>testng</artifactId>
+      <version>5.8</version>
+      <scope>test</scope>
+      <classifier>jdk15</classifier>
+    </dependency>
+
+    <dependency>
+      <groupId>log4j</groupId>
+      <artifactId>log4j</artifactId>
+      <version>1.2.13</version>
+    </dependency>
+  </dependencies>
+  
+</project>

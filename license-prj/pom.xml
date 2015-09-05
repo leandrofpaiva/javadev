@@ -1,0 +1,47 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>br.com.template.license</groupId>
+  <artifactId>license-jar</artifactId>
+  <packaging>jar</packaging>
+  <version>1.0</version>
+  <name>License Project Example</name>
+  <url>http://maven.apache.org</url>
+
+  <parent>
+    <groupId>br.com.javadev</groupId>
+    <artifactId>javadev</artifactId>
+    <version>1.0</version>
+  </parent>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>exec-maven-plugin</artifactId>
+        <configuration>
+          <mainClass>br.com.template.license.HelloWorld</mainClass>
+        </configuration>
+      </plugin>
+      
+	  <plugin>
+        <groupId>com.mycila.maven-license-plugin</groupId>
+        <artifactId>maven-license-plugin</artifactId>
+        <configuration>
+          <header>src/etc/license.txt</header>
+          <mapping>
+            <tmpl>XML_STYLE</tmpl>
+          </mapping>
+          <strictCheck>true</strictCheck>
+          <includes>
+            <include>src/**</include>
+          </includes>
+          <excludes>
+            <exclude>src/main/**.xml</exclude>
+            <exclude>src/main/**.properties</exclude>
+          </excludes>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>

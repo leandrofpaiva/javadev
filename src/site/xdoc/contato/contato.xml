@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document>
+  <properties>
+    <author>Bee Modas</author>
+    <title>Bee Modas - Contatos</title>
+  </properties>
+
+  <meta name="keyword" content="moda, roupas feminina"/>
+  <body>
+    
+    <form id="form1" name="form1" method="post" action="form.php">  
+      <fieldset style="text-align:left;">
+        <legend><b> Contato </b></legend>
+        <strong>Nome:</strong><label><input type="text" name="nome" id="nome" lenght="50"/></label><br/>
+        <strong>Email:</strong><label><input type="text" name="email" id="email" lenght="50"/></label><br/>
+        <strong>Assunto:</strong><label><input type="text" name="assunto" id="assunto" lenght="40"/></label><br/>
+        <strong>Mensagem:</strong><br/>
+        <label><textarea name="mensagem" id="mensagem" cols="45" rows="5"></textarea></label><br/>
+        <center><input type="submit" name="button" id="button" value="Enviar" /></center>
+      </fieldset>
+    </form>
+  </body>
+</document>

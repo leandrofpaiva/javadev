@@ -1,0 +1,34 @@
+ -----
+ APT Template
+ -----
+ -----
+ -----
+
+<<APT Template>>
+
+ <<Criando um template usando APT>>
+ 
+ Procedimento de criação de uma página apt.
+ 
+[../images/apt.jpg] Apt
+
+=======================================
+
+ Criando um box de texto
+
+---------------------------------------
+ Text Box
+---------------------------------------
+
+ <<Links>>
+ 
+ * {{{http://www.xpto.com.br/downloads/apt.zip}apt.zip}}
+ 
+ Criando uma caixa de texto para código com linhas númeradas e diferencia por par e impar:
+
++-------------------------------------+
+ Código 
+   De
+ Programa
++-------------------------------------+
+

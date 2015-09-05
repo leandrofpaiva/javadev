@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>br.com.javadev.scala</groupId>
+  <artifactId>scala-jar</artifactId>
+  <version>1.0</version>
+  <name>Scala Project Exemple</name>
+  <description>Projeto de exemplo com a linguagem Scala com chamada a classe java</description>
+  <url>www.javadev.com.br/tips/java/scala.html</url>
+
+  <parent>
+    <groupId>br.com.javadev</groupId>
+    <artifactId>javadev</artifactId>
+    <version>1.0</version>
+  </parent>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.scala-tools</groupId>
+        <artifactId>maven-scala-plugin</artifactId>
+        <!-- Definindo um launcher para executar programa em scala         -->
+        <!-- Quando definimos um launcher dinico, ele ja e default         -->
+        <!-- dessa forma basta executar o comando mvn scala:run            -->
+        <!-- Caso tenhamos mais de um launchers definido para exe          -->
+        <!-- executarmos um especifico basta: mvn scala:run -Dlauncher=foo --> 
+        <!-- onde foo eh o id do launcher                                  -->
+        <configuration>
+          <launchers>
+            <launcher>
+              <id>hello</id>
+              <mainClass>HelloWorld</mainClass>
+              <!--args>
+                <arg>arg1</arg>
+              </args-->
+              <jvmArgs>
+                <jvmArg>-Xmx128m</jvmArg>
+              </jvmArgs>
+            </launcher>
+          </launchers>
+        </configuration>
+
+        <executions>
+          <execution>
+            <id>scala-compile-first</id>
+            <phase>process-resources</phase>
+            <goals>
+              <goal>add-source</goal>
+              <goal>compile</goal>
+            </goals>
+          </execution>
+
+          <execution>
+            <id>scala-test-compile</id>
+            <phase>process-test-resources</phase>
+            <goals>
+              <goal>testCompile</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.scala-lang</groupId>
+      <artifactId>scala-library</artifactId>
+      <version>2.7.2</version>
+    </dependency>
+  </dependencies>
+
+</project>
